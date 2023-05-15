@@ -51,11 +51,22 @@ b- bias (y-intercept of the line)
 The function is making predicitons on y using a linear function of x, and the parameters are w and b
 We use linear functions to keep our model simple, and to make it easier to train our model
 
-Linear Regression with one variable/ Univariate lienar regression- 
+Linear Regression with one variable/ Univariate linear regression- 
 f_(w,b)(x)=wx+b - single feature x/ one variable x
 f_(w,b)(x)=w1x1+w2x2+...+wnxn+b - multiple features x/ multiple variables x
 
 In order to make any linear regression work, we need to create a cost function
 Cost Function- measures the accuracy of our hypothesis function
 We want to minimize the cost function, and we do this by changing the parameters w and b
+
+ŷ(i) = f_(w,b)(x^(i)) = wx^(i)+b
+
+To determine how well our hypothesis function works, we need to create a cost function
+To find the cost function, we need to find the difference between the predicted value and the actual value
+
+Standard most common cost function formula- (Squared Error Cost Function)
+J(w,b) = Summation from i=1 to m of (((ŷ^i)-y^i)^2)/2m                   (2m to make later calculations easier)
+where m is the number of training examples
+
+How do we find values for w and b that minimizes the cost function?
 
