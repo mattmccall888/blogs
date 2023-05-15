@@ -26,3 +26,36 @@ the credit card transactions that are most different from the rest of the transa
 
 Starting to learn about Linear Regressions- Regression models predicts numbers
 (Fitting a straight line to a data set, and using that line to predict future values)
+
+Terminology to know-
+Training Set- data used to train our models (input features, and output targets (right answers that the model learns from))
+Test Data- data used to test our models
+
+Input Variables- usually denoted by "x", also known as a feature, or input feature (if multiple input variables then
+denoted by "x1", "x2", etc.)
+Output Variables- usually denoted by "y", also known as a target variable, or output feature
+m - Total number of training examples
+n - Number of input variables
+(x,y)- Single Training example
+(x^(i),y^(i))- ith training example (index of the training set)
+i - specific row in the training set
+
+Flowchart of a machine learning algorithm-
+Training Set-> Learning Algorithm-> f (hypothesis/function/model (takes input x, and produces predicition (ŷ)))->
+Predictions (estimated value of y = ŷ, the true value is y)
+
+How to represent f/our function-
+f_(w,b)(x)=wx+b
+w- weight (slope of the line)
+b- bias (y-intercept of the line)
+The function is making predicitons on y using a linear function of x, and the parameters are w and b
+We use linear functions to keep our model simple, and to make it easier to train our model
+
+Linear Regression with one variable/ Univariate lienar regression- 
+f_(w,b)(x)=wx+b - single feature x/ one variable x
+f_(w,b)(x)=w1x1+w2x2+...+wnxn+b - multiple features x/ multiple variables x
+
+In order to make any linear regression work, we need to create a cost function
+Cost Function- measures the accuracy of our hypothesis function
+We want to minimize the cost function, and we do this by changing the parameters w and b
+
