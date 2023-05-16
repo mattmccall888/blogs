@@ -1,0 +1,59 @@
+Today I started learning about how to set our weights and bias using gradient descent
+
+So, how do we find values for w and b that minimizes the cost function?
+We need to train our model using gradient descent!
+
+We have our cost function J(w,b), and we want to minimize it
+
+First we set both w and b to any random value (usually 0), and we keep changing the values of w and b to minimize
+the cost function until we settle near a minimum
+
+each step update simultaneously: w = w - alpha * d/dw J(w,b)
+                                 b = b - alpha * d/db J(w,b)
+                                 correct simultaneous implementation:
+                                 temp1 = w - alpha * d/dw J(w,b)
+                                 temp2 = b - alpha * d/db J(w,b)
+                                 w = temp1
+                                 b = temp2
+
+
+Alpha is the learning rate, which is a small number (usually 0.01)
+this is the size of the step we take to reach the minimum (set small enough to not overshoot the minimum)
+
+d/dw J(w,b) is the derivative of the cost function with respect to w, determines the direction of the step,
+and when multiplied by alpha, determines the size of the step
+
+Repeat until convergence (until we reach a minimum, where w and b don't change much)
+This is done by using the partial derivative to find the slope of the cost function at a point, and then take a step
+in the direction of the negative of the slope to reach a minimum
+
+My question is what if you have a graph that has a point which flattens out, leading our derivitive at that point 
+to be 0 even though it is not a local mimimum? This would lead to a cost function that is not minimized and
+a model that is not efficent. How do we avoid this? 
+
+Found out these points I was referring to that have a derivative of 0 but are not local extremes are called saddle 
+points. The way to avoid getting stuck on a saddle point is to use random initialization. This is because the chances
+of getting stuck on a saddle point are very low, and if you do get stuck, you can just reinitialize and try again.
+Another method is to use momentum, which is a way to avoid getting stuck on a saddle point by using the previous
+gradient to help you move past the saddle point. The last way I found is called Intermittent Perturbations, which
+is a way to avoid getting stuck on a saddle point by adding noise to the gradient. This is done by adding a
+random vector to the gradient vector, which will help you move past the saddle point. It's like bumping our ball
+slightly off course so we don't get stuck on the saddle point.
+
+Gradient Descent for linear Regressions
+We have our linear regression function and our cost function given as
+f_w,b(x) = wx + b
+J(w,b) = 1/2m * sum (from i=1 to m)(f_w,b(x^(i)) - y^(i))^2
+
+Gradient Descent Algorithm
+repeat until convergence
+{
+    w = w - alpha * d/dw J(w,b) -> w = w - alpha * 1/m * sum (from i=1 to m)(f_w,b(x^(i)) - y^(i)) * x^(i)
+    b = b - alpha * d/db J(w,b) -> b = b - alpha * 1/m * sum (from i=1 to m)(f_w,b(x^(i)) - y^(i))
+}
+
+"Batch" Gradient Descent means that we use all m examples in each iteration
+
+
+
+
