@@ -68,5 +68,7 @@ Standard most common cost function formula- (Squared Error Cost Function)
 J(w,b) = Summation from i=1 to m of (((ŷ^i)-y^i)^2)/2m                   (2m to make later calculations easier)
 where m is the number of training examples
 
-How do we find values for w and b that minimizes the cost function?
+
+
+
 
