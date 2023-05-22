@@ -1,0 +1,24 @@
+Today I started learning about a new type of regressions, the logistic regression. Compared to the linear regression
+the logistic regression
+
+The logistic regression is calculated using the formula:
+ŷ= h_theta(x) = 1 / (1 + e^-(wx + b))
+s(x) = 1 / (1 + e^-x)
+
+In order to use logisitc regression, we need to use gradient descent. The cost function is:
+J(w,b) = J(theta) = 1/N * sum(yi * log(h_theta(x^i))) + (1 - y^i) * log(1 - h_theta(x^i))
+
+J'(theta) = [dJ/dw, dJ/db] = [1/N * sum((ŷ^i - y^i) * x^i), 1/N * sum(ŷ^i - y^i)]
+
+w = w - alpha * dJ/dw
+b = b - alpha * dJ/db
+
+The code for the logisitc regression should be very similar to the code of linear regressions.
+The only difference is the cost function and the hypothesis function.
+
+Steps for logistic regression:
+1. Initialize the weights and the bias
+Given a data point
+    -Put the values from the data point into the sigmoid function ŷ = 1 / (1 + e^-(wx + b))
+    -The choose the label based on the proximity
+

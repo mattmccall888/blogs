@@ -1,0 +1,25 @@
+Today I started learning about how to optimize gradient descent for algos such as multiple feature regressions
+
+This process is called feature scaling and it is used to normalize the data so that the gradient descent algorithm
+can converge faster. What this means is that the algorithm will take less steps to reach the minimum value of the
+cost function.
+
+When one of our features have a large size, we can use a smaller weight to compensate for it. This will make the
+gradient descent algorithm converge faster. On the other hand, if one of our features have a small size, we can use
+a larger weight to compensate for it. This will also make the gradient descent algorithm converge faster. 
+
+How do we implement feature scaling? 
+ If 300 < x_1 < 2000, then x_1 = x_1 / 2000
+ So if x_1 = 1650, then x_1 = 1650 / 2000 = 0.825
+We therefore now have a range from .15 to 1
+
+If -100 < x_2 < 500, then x_2 = x_2 / 500
+We now have a range from -.2 to 1
+
+We can also use mean normalization. This is when we subtract the average value from the feature value.
+So if 300 < x_1 < 2000, then x_1 = (x_1 - 1150) / 2000
+
+If -100 < x_2 < 500, then x_2 = (x_2 - 200) / 500
+
+We can also do both feature scaling and mean normalization. This is when we subtract the average value from the
+feature value and then divide by the range or standard deviation.
